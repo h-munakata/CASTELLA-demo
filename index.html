@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- BOOTSTRAP CORE STYLE  -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- GOOGLE FONT -->
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' crossorigin="anonymous" />
+
+        <!-- BOOTSTRAP JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+        <!-- CUSTOM STYLE CSS -->
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+        <!-- Page description -->   
+
+
+        <!-- Page keywords -->
+        
+
+        <!-- Page author -->
+        
+        <meta name="author" content="Hokuto Munakata" />
+        
+
+        <!-- Site title -->
+        
+        <title>CASTELLA: Long Audio Dataset with Captions and Temporal Boundaries - Hokuto Munakata</title>
+    </head>
+    <body>
+
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">CASTELLA: Long Audio Dataset <br> with Captions and Temporal Boundaries</h1>
+            <p class="lead">
+                Hokuto Munakata, Takehiro Imamura, Taichi Nishimura, Tatsuya Komatsu
+            </p>
+            <p class="lead">
+                LY Corporation, Japan<br>
+
+            </p>
+            <p class="lead">
+                Under review<br>
+                [<a href="https://arxiv.org/abs/XXXX.XXXX">Paper</a>]
+                [<a href="https://github.com/line/castella">Annotation data</a>]
+                [<a href="https://github.com/h-munakata/CASTELLA-audio">Audio data</a>]
+                [<a href="https://zenodo.org/records/XXXX.XXXX">CLAP Features</a>]
+                <br>
+            </p>
+        </div>
+    </section>
+            
+    <p><link rel="stylesheet" type="text/css" href="style.css"></p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row"><h2>Abstract</h2></div>
+            <p class="lead">
+                We introduce CASTELLA, a human-annotated audio benchmark for the task of audio moment retrieval (AMR). 
+                Although AMR has various useful potential applications, there is still no established benchmark with real-world data.
+                The early study of AMR trained the model with solely synthetic datasets.
+                Moreover, the evaluation is based on annotated dataset of fewer than 100 samples.
+                This resulted in less reliable reported performance.
+                To ensure performance for applications in real-world environments, we present CASTELLA, a large-scale manually annotated AMR dataset.
+                CASTELLA consists of 1,009, 213, and 640 audio recordings for train, valid, and test split, respectively, which is 24 times larger than the previous dataset.
+                We also establish a baseline model for AMR using CASTELLA.
+                Our experiments demonstrate that a model fine-tuned on CASTELLA after pre-training on the synthetic data outperformed a model trained solely on the synthetic data by 5.4 points in Recall1@0.7. The dataset and code will be publicly available upon paper acceptance.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <div class="text-center">
+                <img src="images/fig1.png" class="img-fluid">
+                <figcaption class="mt-2"> Fig. 1.
+                    Sample of CASTELLA. Each sample contains long audio recording, global and local captions, and temporal boundaries.
+                </figcaption>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"><h2>How to use?</h2></div>
+        Annotation data and audio data are available at <a href="https://github.com/line/castella">GitHub - line/castella</a> and <a href="https://github.com/h-munakata/CASTELLA-audio">GitHub - h-munakata/CASTELLA-audio</a>.
+        For audio moment retrieval, we provide the recipe of audio moment retrieval using CASTELLA dataset on <a href="https://github.com/line/lighthouse">GitHub - line/lighthouse</a>.
+        The extracted CLAP feature for this recipe and the procedure to setup is available at <a href="https://zenodo.org/records/XXXX.XXXX">Zenodo</a>.
+    <div class="row"><h2>Examples</h2></div>
+    <div class="row">
+        <p class="lead">
+            Here are some examples from the CASTELLA dataset.
+        </p>
+    </div>
+    
+    <!-- Example 1 -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="youtube-video-1" class="embed-responsive-item" src="https://www.youtube.com/embed/WYObv5TXAHI?enablejsapi=1" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Global Caption</h4>
+            <p>A television program features music, sound effects, and several people engaged in conversation</p>
+            <h4>Local Captions</h4>
+            <ol>
+                <li>
+                    Sound effects, music, and cheering fill the air
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(1, 0)">0:00~0:06</button>
+                </li>
+                <li>
+                    A woman sings along with the piano
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(1, 205)">3:25~4:24</button>
+                </li>
+                <li>
+                    A man and a woman have a conversation as music plays in the background
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(1, 40)">0:40~1:27</button>
+                </li>
+                <li>
+                    Cheering fills the air as a man and a woman speak
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(1, 171)">2:51~3:15</button>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(1, 271)">4:31~5:00</button>
+                </li>
+                <li>
+                    Amid cheering and applause, a woman sings to the piano
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(1, 210)">3:30~3:34</button>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(1, 220)">3:34~3:39</button>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(1, 240)">4:00~4:06</button>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Example 2 -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="youtube-video-2" class="embed-responsive-item" src="https://www.youtube.com/embed/bxDKT6A-RuM?enablejsapi=1" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Global Caption</h4>
+            <p>A man works with wood and machinery while talking</p>
+            <h4>Local Captions</h4>
+            <ol>
+                <li>
+                    A man talks as a tape measure snaps shut
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(2, 169)">2:49~2:52</button>
+                </li>
+                <li>
+                    Wood is cut while machinery runs
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(2, 200)">3:20~3:53</button>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(2, 277)">4:37~5:00</button>
+                </li>
+                <li>
+                    A man talks as wood is being cut while machinery runs
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(2, 281)">4:41~4:49</button>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(2, 294)">4:54~5:00</button>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Example 3 -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="youtube-video-3" class="embed-responsive-item" src="https://www.youtube.com/embed/-PfTYmixaVM?enablejsapi=1" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4>Global Caption</h4>
+            <p>Someone is cooking with a metal pot or frying pan on a gas stove using water</p>
+            <h4>Local Captions</h4>
+            <ol>
+                <li>
+                    Water flows
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(3, 14)">0:14~0:19</button>
+                </li>
+                <li>
+                    A gas stove ignites
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(3, 27)">0:27~0:29</button>
+                </li>
+                <li>
+                    Water is boiling
+                    <br>
+                    <button class="btn btn-sm btn-outline-primary mt-1 mr-1" onclick="seekToTime(3, 72)">1:12~5:00</button>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        var players = {};
+        var apiReady = false;
+        
+        // YouTube IFrame API の読み込み
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+        function onYouTubeIframeAPIReady() {
+            apiReady = true;
+            console.log('YouTube IFrame API is ready');
+            
+            players[1] = new YT.Player('youtube-video-1', {
+                events: {
+                    'onReady': function(event) { onPlayerReady(event, 1); }
+                }
+            });
+            players[2] = new YT.Player('youtube-video-2', {
+                events: {
+                    'onReady': function(event) { onPlayerReady(event, 2); }
+                }
+            });
+            players[3] = new YT.Player('youtube-video-3', {
+                events: {
+                    'onReady': function(event) { onPlayerReady(event, 3); }
+                }
+            });
+        }
+        
+        function onPlayerReady(event, playerId) {
+            console.log('YouTube player ' + playerId + ' is ready');
+        }
+        
+        function seekToTime(playerId, seconds) {
+            console.log('Seeking to time:', playerId, seconds);
+            if (players[playerId] && players[playerId].seekTo && typeof players[playerId].seekTo === 'function') {
+                try {
+                    players[playerId].seekTo(seconds, true);
+                    players[playerId].playVideo();
+                    console.log('Successfully seeked using API');
+                } catch (error) {
+                    console.error('Error using YouTube API:', error);
+                    fallbackSeek(playerId, seconds);
+                }
+            } else {
+                console.log('YouTube API not available, using fallback');
+                fallbackSeek(playerId, seconds);
+            }
+        }
+        
+        function fallbackSeek(playerId, seconds) {
+            var iframe = document.getElementById('youtube-video-' + playerId);
+            if (iframe) {
+                var currentSrc = iframe.src.split('?')[0];
+                iframe.src = currentSrc + '?enablejsapi=1&start=' + seconds + '&autoplay=1';
+                console.log('Fallback seek executed');
+            } else {
+                console.error('iframe not found for player:', playerId);
+            }
+        }
+    </script>
+    </body>
+</html>
