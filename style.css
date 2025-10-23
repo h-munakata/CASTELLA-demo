@@ -6,3 +6,23 @@ img {
     padding-top: 20px;
   }
 
+.jumbotron {
+    background-image: url('images/header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.jumbotron a {
+    color: #9370DB;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.jumbotron a:hover {
+    color: #8A2BE2;
+    text-decoration: underline;
+}
